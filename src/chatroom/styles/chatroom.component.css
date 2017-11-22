@@ -1,0 +1,27 @@
+#Message {
+    margin-top: 20px;
+    width:100%
+}
+
+#Message #MessageInput {
+    max-width:unset;
+    width:100%;
+    max-width:100%   
+}
+
+#Messages {
+    margin-top: 20px;
+    border: 1px solid lightgrey;
+    margin-bottom: auto;
+    display:block;
+    width:100%;
+    white-space:nowrap;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+#FileHolder {
+    width: 150px; 
+    height:100px; 
+    border: 2px solid black;
+}
