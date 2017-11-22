@@ -1,0 +1,26 @@
+<div>
+    <input id="name" [(ngModel)]="name" type="text" placeholder=" Name" />
+    <p style="color:red" *ngIf="name == ''">Please provide your name</p>  
+</div>
+
+<div id="Search">
+    <input type="text" [(ngModel)]="messageFilter" id="FilterInput" placeholder=" Filter text" />
+</div>
+<div id="Messages">
+    <div class="msg" *ngFor="let response of chatMessages | filterMessage:messageFilter">
+        {{response.name}}: 
+        <span *ngIf="!response.image">{{response.message}}</span>
+        <img *ngIf="response.image" [attr.src]="response.image" />
+    </div>
+</div>
+
+<div *ngFor="let response of peopleTyping">
+    {{response}} is typing...
+</div>
+
+<div id="FileHolder" fileUpload (fileEvent)="handleFile($event)">
+    <p style="text-align:center; vertical-align:middle; line-height:90px;">Drag image here</p>
+</div>
+<div id="Message">
+    <input type="text" [(ngModel)]="message" (keyup)="onKeyPress($event)" id="MessageInput" placeholder=" Type message and press Enter" />
+</div>
